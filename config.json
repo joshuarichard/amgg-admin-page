@@ -1,0 +1,15 @@
+{
+    "mongo": {
+        "host": "73.227.187.84",
+        "port": "27017",
+        "username": "x",
+        "password": "x",
+        "db": "endgame",
+        "childCollection": "children",
+        "donorCollection": "donors",
+        "cartCollection": "carts"
+    },
+    "app": {
+        "port": 3000
+    }
+}
