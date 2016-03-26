@@ -26,6 +26,13 @@
     padding-top: 2rem;
 }
 
-imageCanvas {
+.btn-primary {
+    background: #F5842A;
+    border-color: #F5842A;
+}
+
+#imageCanvas {
     max-width: 100%;
+    border-style: solid;
+    border-color: #C0C0C0;
 }

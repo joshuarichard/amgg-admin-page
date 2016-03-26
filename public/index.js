@@ -32,7 +32,7 @@ $(document).ready(function() {
         var middleName = $('#child-middle-name').val();
         var lastName = $('#child-last-name').val();
         var gender = $('#child-gender').val();
-        // birthday
+        var birthday = new Date($('#child-birthday-year').val(), $('#child-birthday-month').val() - 1, $('#child-birthday-day').val());
         var address = $('#child-address').val();
         var city = $('#child-address-city').val();
         var province = $('#child-address-province').val();
@@ -43,7 +43,7 @@ $(document).ready(function() {
         var biodata = $('#child-biodata').val();
         var picture = document.getElementById('imageCanvas').toDataURL();
 
-        console.log(picture);
+        console.log();
 
         // define the request
         $.ajax({
@@ -53,6 +53,7 @@ $(document).ready(function() {
                 'nombre': name,
                 'apellido': lastName,
                 'género': gender,
+                'cumpleaños': birthday,
                 'direccion_de_casa': address,
                 'ciudad': city,
                 'provinica': province,
@@ -60,7 +61,8 @@ $(document).ready(function() {
                 'centro_de_ninos': center,
                 'status': status,
                 'aficiones': hobbies,
-                'biodata': biodata
+                'biodata': biodata,
+                'picture': picture
             },
             success: function(res) {
                 alert('niño inserta');
@@ -71,8 +73,6 @@ $(document).ready(function() {
                 alert('que había un problema de insertar el niño');
             }
         });
-
-        console.log(name + middleName + lastName + gender + address + city + province + zip + center + hobbies + biodata);
     });
 
     $('#clear-form').click(function() {

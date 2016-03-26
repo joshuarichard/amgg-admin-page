@@ -4,7 +4,7 @@
         "port": "27017",
         "username": "x",
         "password": "x",
-        "db": "endgame",
+        "db": "production-beta",
         "childCollection": "children",
         "donorCollection": "donors",
         "cartCollection": "carts"
