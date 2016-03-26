@@ -3,9 +3,9 @@ var express = require('express');
 var fs = require('fs');
 var path = require('path');
 var nconf = require('nconf');
+var bodyParser = require('body-parser');
 
 var mongo = require('./data/mongo.js');
-var password = require('./data/password.js');
 
 var app = express();
 
@@ -15,6 +15,8 @@ nconf.file({
 
 var port = nconf.get('app:port');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
@@ -24,6 +26,10 @@ app.get('/', function(req, res) {
 var childCollection = nconf.get('mongo:childCollection');
 var donorCollection = nconf.get('mongo:donorCollection');
 var cartCollection = nconf.get('mongo:cartCollection');
+
+app.post('/api/v1/child/insert', function(req, res) {
+    res.send({'cool': 'cool'});
+});
 
 app.listen(port, function () {
     console.log('Express port listening at ' + port);

@@ -1,0 +1,27 @@
+.date {
+    width:auto;
+    display:inline-block;
+}
+
+.form-group {
+    padding-top: 2rem;
+}
+
+.control-label {
+    padding-top: 1rem;
+}
+
+.child-input {
+    padding-top: 1rem;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.child-button {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+}

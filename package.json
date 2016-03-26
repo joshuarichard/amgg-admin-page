@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/joshuarichard/amgg-admin-page#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "bunyan": "^1.8.0",
     "express": "^4.13.3",
     "mongodb": "~2.0.49",
