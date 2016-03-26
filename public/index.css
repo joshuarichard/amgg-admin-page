@@ -25,3 +25,7 @@
     padding-left: 1rem;
     padding-top: 2rem;
 }
+
+imageCanvas {
+    max-width: 100%;
+}

@@ -41,6 +41,9 @@ $(document).ready(function() {
         var status = $('#child-status').val();
         var hobbies = $('#child-hobbies').val();
         var biodata = $('#child-biodata').val();
+        var picture = document.getElementById('imageCanvas').toDataURL();
+
+        console.log(picture);
 
         // define the request
         $.ajax({
@@ -89,5 +92,29 @@ $(document).ready(function() {
         $('#child-center').val('');
         $('#child-hobbies').val('');
         $('#child-biodata').val('');
+    }
+
+    var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+    var canvas = document.getElementById('imageCanvas');
+    var ctx = canvas.getContext('2d');
+    var imageContainerHeight= document.getElementById('image-child').clientHeight;
+
+    function handleImage(e){
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                if (img.height > imageContainerHeight) {
+                    img.width *= imageContainerHeight / img.height;
+                    img.height = imageContainerHeight;
+                }
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
     }
 });
