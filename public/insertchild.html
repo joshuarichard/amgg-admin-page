@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- include client code -->
-    <script type="text/javascript" charset="utf-8" src="./index.js"></script>
-    <link href="./index.css" rel="stylesheet" />
+    <script type="text/javascript" charset="utf-8" src="./insertchild.js"></script>
+    <link href="./insertchild.css" rel="stylesheet" />
 
     <div id="insert-child" class="container col-md-6 form-group">
         <div class="col-md-12">
           <img src="./amgg-logo.png" class="col-md-6 no-gutter" alt="AMG Guatemala Logo">
-          <h1 class="col-md-6">Insertar un niño</h1>
+          <h2 class="col-md-6">Ingreso de niño/niña</h2>
         </div>
         <label class="col-md-4 control-label">Nombre</label>
         <div class="col-md-8 child-input">
@@ -22,7 +22,7 @@
         <div class="col-md-8 child-input">
             <input id="child-middle-name" class="form-control required" type="text" name="middle-name">
         </div>
-        <label class="col-md-4 control-label">Apellido</label>
+        <label class="col-md-4 control-label">Apellidos</label>
         <div class="col-md-8 child-input">
             <input id="child-last-name" class="form-control required" type="text" name="last-name">
         </div>
@@ -134,7 +134,7 @@
         <div class="col-md-8 child-input">
             <input id="child-address-zip-code" class="form-control required" type="text" name="zip-code">
         </div>
-        <label class="col-md-4 control-label">Centro de Niños</label>
+        <label class="col-md-4 control-label">Centro/Colegio</label>
         <div class="col-md-8 child-input">
             <input id="child-center" class="form-control required" type="text" name="child-center">
         </div>
@@ -146,13 +146,13 @@
                 <option value="Additional Sponsor Needed">Additional Sponsor Needed</option>
             </select>
         </div>
-        <label class="col-md-4 control-label">Aficiones</label>
+        <label class="col-md-4 control-label">Pasatiempos</label>
         <div class="col-md-8 child-input">
             <input id="child-hobbies" class="form-control" type="text" name="aficiones">
         </div>
-        <label class="col-md-4 control-label">Biodata</label>
+        <label class="col-md-4 control-label">Historia</label>
         <div class="col-md-8 child-input" style="padding-bottom: 1rem;">
-            <input id="child-biodata" class="form-control" type="text" name="biodata">
+            <textarea id="child-biodata" class="form-control" rows="5" name="biodata"></textarea>
         </div>
         <div class="col-md-12">
             <a>

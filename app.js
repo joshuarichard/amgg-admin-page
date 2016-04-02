@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-    res.redirect('index.html');
+    res.redirect('insertchild.html');
 });
 
 var childCollection = nconf.get('mongo:childCollection');
