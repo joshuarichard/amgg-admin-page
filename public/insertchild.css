@@ -1,18 +1,22 @@
+.header {
+    margin-bottom: 1.5em;
+}
+
 .date {
     width:auto;
     display:inline-block;
 }
 
 .form-group {
-    padding-top: 2rem;
+    padding-top: 2em;
 }
 
 .control-label {
-    padding-top: 1rem;
+    padding-top: 1em;
 }
 
 .child-input {
-    padding-top: 1rem;
+    padding-top: 1em;
 }
 
 .no-gutter > [class*='col-'] {
@@ -21,9 +25,9 @@
 }
 
 .child-button {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-top: 2rem;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 2em;
 }
 
 .btn-primary {
@@ -35,4 +39,69 @@
     max-width: 100%;
     border-style: solid;
     border-color: #C0C0C0;
+}
+
+.parents-expanded {
+    display: none;
+}
+
+hr {
+  border-color: #15274D;
+}
+
+.btn {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: .25em;
+    margin-right: .25em;
+}
+
+.siblings-expanded-1 {
+    display: none;
+}
+.siblings-expanded-2 {
+    display: none;
+}
+.siblings-expanded-3 {
+    display: none;
+}
+.siblings-expanded-4 {
+    display: none;
+}
+.siblings-expanded-5 {
+    display: none;
+}
+.siblings-expanded-6 {
+    display: none;
+}
+.siblings-expanded-7 {
+    display: none;
+}
+.siblings-expanded-8 {
+    display: none;
+}
+.siblings-expanded-9 {
+    display: none;
+}
+.siblings-expanded-10 {
+    display: none;
+}
+.siblings-expanded-11 {
+    display: none;
+}
+.siblings-expanded-12 {
+    display: none;
+}
+.siblings-expanded-13 {
+    display: none;
+}
+.siblings-expanded-14 {
+    display: none;
+}
+.siblings-expanded-15 {
+    display: none;
+}
+
+#remove-a-sibling {
+    display: none;
 }
