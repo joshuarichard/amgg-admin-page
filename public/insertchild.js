@@ -60,123 +60,123 @@ $(document).ready(function() {
         }
         //sibling 1 - only get values if there is a sibling
         if ($('.siblings-expanded-1').css('display') != 'none') {
-            var name = $('#sibling1-first-name').val();
-            var middleName = $('#sibling1-middle-name').val();
-            var lastName = $('#sibling1-last-name').val();
-            var gender = $('#sibling1-gender').val();
-            var birthday = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
+            var sibling1Name = $('#sibling1-first-name').val();
+            var sibling1MiddleName = $('#sibling1-middle-name').val();
+            var sibling1LastName = $('#sibling1-last-name').val();
+            var sibling1Gender = $('#sibling1-gender').val();
+            var sibling1Birthday = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
         }
         //sibling 2 - only get values if there is a sibling
         if ($('.siblings-expanded-2').css('display') != 'none') {
-            var name = $('#sibling2-first-name').val();
-            var middleName = $('#sibling2-middle-name').val();
-            var lastName = $('#sibling2-last-name').val();
-            var gender = $('#sibling2-gender').val();
-            var birthday = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
+            var sibling2Name = $('#sibling2-first-name').val();
+            var sibling2MiddleName = $('#sibling2-middle-name').val();
+            var sibling2LastName = $('#sibling2-last-name').val();
+            var sibling2Gender = $('#sibling2-gender').val();
+            var sibling2Birthday = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
         }
         //sibling 3 - only get values if there is a sibling
         if ($('.siblings-expanded-3').css('display') != 'none') {
-            var name = $('#sibling3-first-name').val();
-            var middleName = $('#sibling3-middle-name').val();
-            var lastName = $('#sibling3-last-name').val();
-            var gender = $('#sibling3-gender').val();
-            var birthday = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
+            var sibling3Name = $('#sibling3-first-name').val();
+            var sibling3MiddleName = $('#sibling3-middle-name').val();
+            var sibling3LastName = $('#sibling3-last-name').val();
+            var sibling3Gender = $('#sibling3-gender').val();
+            var sibling3Birthday = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
         }
         //sibling 4 - only get values if there is a sibling
         if ($('.siblings-expanded-4').css('display') != 'none') {
-            var name = $('#sibling4-first-name').val();
-            var middleName = $('#sibling4-middle-name').val();
-            var lastName = $('#sibling4-last-name').val();
-            var gender = $('#sibling4-gender').val();
-            var birthday = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
+            var sibling4Name = $('#sibling4-first-name').val();
+            var sibling4MiddleName = $('#sibling4-middle-name').val();
+            var sibling4LastName = $('#sibling4-last-name').val();
+            var sibling4Gender = $('#sibling4-gender').val();
+            var sibling4Birthday = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
         }
         //sibling 5 - only get values if there is a sibling
         if ($('.siblings-expanded-5').css('display') != 'none') {
-            var name = $('#sibling5-first-name').val();
-            var middleName = $('#sibling5-middle-name').val();
-            var lastName = $('#sibling5-last-name').val();
-            var gender = $('#sibling5-gender').val();
-            var birthday = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
+            var sibling5Name = $('#sibling5-first-name').val();
+            var sibling5MiddleName = $('#sibling5-middle-name').val();
+            var sibling5LastName = $('#sibling5-last-name').val();
+            var sibling5Gender = $('#sibling5-gender').val();
+            var sibling5Birthday = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
         }
         //sibling 6 - only get values if there is a sibling
         if ($('.siblings-expanded-6').css('display') != 'none') {
-            var name = $('#sibling6-first-name').val();
-            var middleName = $('#sibling6-middle-name').val();
-            var lastName = $('#sibling6-last-name').val();
-            var gender = $('#sibling6-gender').val();
-            var birthday = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
+            var sibling6Name = $('#sibling6-first-name').val();
+            var sibling6MiddleName = $('#sibling6-middle-name').val();
+            var sibling6LastName = $('#sibling6-last-name').val();
+            var sibling6Gender = $('#sibling6-gender').val();
+            var sibling6Birthday = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
         }
         //sibling 7 - only get values if there is a sibling
         if ($('.siblings-expanded-7').css('display') != 'none') {
-            var name = $('#sibling7-first-name').val();
-            var middleName = $('#sibling7-middle-name').val();
-            var lastName = $('#sibling7-last-name').val();
-            var gender = $('#sibling7-gender').val();
-            var birthday = new Date($('#sibling7-birthday-year').val(), $('#sibling7-birthday-month').val() - 1, $('#sibling7-birthday-day').val());
+            var sibling7Name = $('#sibling7-first-name').val();
+            var sibling7MiddleName = $('#sibling7-middle-name').val();
+            var sibling7LastName = $('#sibling7-last-name').val();
+            var sibling7Gender = $('#sibling7-gender').val();
+            var sibling7Birthday = new Date($('#sibling7-birthday-year').val(), $('#sibling7-birthday-month').val() - 1, $('#sibling7-birthday-day').val());
         }
         //sibling 8 - only get values if there is a sibling
         if ($('.siblings-expanded-8').css('display') != 'none') {
-            var name = $('#sibling8-first-name').val();
-            var middleName = $('#sibling8-middle-name').val();
-            var lastName = $('#sibling8-last-name').val();
-            var gender = $('#sibling8-gender').val();
-            var birthday = new Date($('#sibling8-birthday-year').val(), $('#sibling8-birthday-month').val() - 1, $('#sibling8-birthday-day').val());
+            var sibling8Name = $('#sibling8-first-name').val();
+            var sibling8MiddleName = $('#sibling8-middle-name').val();
+            var sibling8LastName = $('#sibling8-last-name').val();
+            var sibling8Gender = $('#sibling8-gender').val();
+            var sibling8Birthday = new Date($('#sibling8-birthday-year').val(), $('#sibling8-birthday-month').val() - 1, $('#sibling8-birthday-day').val());
         }
         //sibling 9 - only get values if there is a sibling
         if ($('.siblings-expanded-9').css('display') != 'none') {
-            var name = $('#sibling9-first-name').val();
-            var middleName = $('#sibling9-middle-name').val();
-            var lastName = $('#sibling9-last-name').val();
-            var gender = $('#sibling9-gender').val();
-            var birthday = new Date($('#sibling9-birthday-year').val(), $('#sibling9-birthday-month').val() - 1, $('#sibling9-birthday-day').val());
+            var sibling9Name = $('#sibling9-first-name').val();
+            var sibling9MiddleName = $('#sibling9-middle-name').val();
+            var sibling9LastName = $('#sibling9-last-name').val();
+            var sibling9Gender = $('#sibling9-gender').val();
+            var sibling9Birthday = new Date($('#sibling9-birthday-year').val(), $('#sibling9-birthday-month').val() - 1, $('#sibling9-birthday-day').val());
         }
         //sibling 10 - only get values if there is a sibling
         if ($('.siblings-expanded-10').css('display') != 'none') {
-            var name = $('#sibling10-first-name').val();
-            var middleName = $('#sibling10-middle-name').val();
-            var lastName = $('#sibling10-last-name').val();
-            var gender = $('#sibling10-gender').val();
-            var birthday = new Date($('#sibling10-birthday-year').val(), $('#sibling10-birthday-month').val() - 1, $('#sibling10-birthday-day').val());
+            var sibling10Name = $('#sibling10-first-name').val();
+            var sibling10MiddleName = $('#sibling10-middle-name').val();
+            var sibling10LastName = $('#sibling10-last-name').val();
+            var sibling10Gender = $('#sibling10-gender').val();
+            var sibling10Birthday = new Date($('#sibling10-birthday-year').val(), $('#sibling10-birthday-month').val() - 1, $('#sibling10-birthday-day').val());
         }
         //sibling 11 - only get values if there is a sibling
         if ($('.siblings-expanded-11').css('display') != 'none') {
-            var name = $('#sibling11-first-name').val();
-            var middleName = $('#sibling11-middle-name').val();
-            var lastName = $('#sibling11-last-name').val();
-            var gender = $('#sibling11-gender').val();
-            var birthday = new Date($('#sibling11-birthday-year').val(), $('#sibling11-birthday-month').val() - 1, $('#sibling11-birthday-day').val());
+            var sibling11Name = $('#sibling11-first-name').val();
+            var sibling11MiddleName = $('#sibling11-middle-name').val();
+            var sibling11LastName = $('#sibling11-last-name').val();
+            var sibling11Gender = $('#sibling11-gender').val();
+            var sibling11Birthday = new Date($('#sibling11-birthday-year').val(), $('#sibling11-birthday-month').val() - 1, $('#sibling11-birthday-day').val());
         }
         //sibling 12 - only get values if there is a sibling
         if ($('.siblings-expanded-12').css('display') != 'none') {
-            var name = $('#sibling12-first-name').val();
-            var middleName = $('#sibling12-middle-name').val();
-            var lastName = $('#sibling12-last-name').val();
-            var gender = $('#sibling12-gender').val();
-            var birthday = new Date($('#sibling12-birthday-year').val(), $('#sibling12-birthday-month').val() - 1, $('#sibling12-birthday-day').val());
+            var sibling12Name = $('#sibling12-first-name').val();
+            var sibling12MiddleName = $('#sibling12-middle-name').val();
+            var sibling12LastName = $('#sibling12-last-name').val();
+            var sibling12Gender = $('#sibling12-gender').val();
+            var sibling12Birthday = new Date($('#sibling12-birthday-year').val(), $('#sibling12-birthday-month').val() - 1, $('#sibling12-birthday-day').val());
         }
         //sibling 13 - only get values if there is a sibling
         if ($('.siblings-expanded-13').css('display') != 'none') {
-            var name = $('#sibling13-first-name').val();
-            var middleName = $('#sibling13-middle-name').val();
-            var lastName = $('#sibling13-last-name').val();
-            var gender = $('#sibling13-gender').val();
-            var birthday = new Date($('#sibling13-birthday-year').val(), $('#sibling13-birthday-month').val() - 1, $('#sibling13-birthday-day').val());
+            var sibling13Name = $('#sibling13-first-name').val();
+            var sibling13MiddleName = $('#sibling13-middle-name').val();
+            var sibling13LastName = $('#sibling13-last-name').val();
+            var sibling13Gender = $('#sibling13-gender').val();
+            var sibling13Birthday = new Date($('#sibling13-birthday-year').val(), $('#sibling13-birthday-month').val() - 1, $('#sibling13-birthday-day').val());
         }
         //sibling 14 - only get values if there is a sibling
         if ($('.siblings-expanded-14').css('display') != 'none') {
-            var name = $('#sibling14-first-name').val();
-            var middleName = $('#sibling14-middle-name').val();
-            var lastName = $('#sibling14-last-name').val();
-            var gender = $('#sibling14-gender').val();
-            var birthday = new Date($('#sibling14-birthday-year').val(), $('#sibling14-birthday-month').val() - 1, $('#sibling14-birthday-day').val());
+            var sibling14Name = $('#sibling14-first-name').val();
+            var sibling14MiddleName = $('#sibling14-middle-name').val();
+            var sibling14LastName = $('#sibling14-last-name').val();
+            var sibling14Gender = $('#sibling14-gender').val();
+            var sibling14Birthday = new Date($('#sibling14-birthday-year').val(), $('#sibling14-birthday-month').val() - 1, $('#sibling14-birthday-day').val());
         }
         //sibling 15 - only get values if there is a sibling
         if ($('.siblings-expanded-15').css('display') != 'none') {
-            var name = $('#sibling15-first-name').val();
-            var middleName = $('#sibling15-middle-name').val();
-            var lastName = $('#sibling15-last-name').val();
-            var gender = $('#sibling15-gender').val();
-            var birthday = new Date($('#sibling15-birthday-year').val(), $('#sibling15-birthday-month').val() - 1, $('#sibling15-birthday-day').val());
+            var sibling15Name = $('#sibling15-first-name').val();
+            var sibling15MiddleName = $('#sibling15-middle-name').val();
+            var sibling15LastName = $('#sibling15-last-name').val();
+            var sibling15Gender = $('#sibling15-gender').val();
+            var sibling15Birthday = new Date($('#sibling15-birthday-year').val(), $('#sibling15-birthday-month').val() - 1, $('#sibling15-birthday-day').val());
         }
 
         console.log();
@@ -198,7 +198,23 @@ $(document).ready(function() {
                 'status': status,
                 'aficiones': hobbies,
                 'biodata': biodata,
-                'picture': picture
+                'picture': picture,
+                'parents': [
+                    'parent': parent1Gender {
+                        'name': parent1Name,
+                        'segundo': parent1MiddleName,
+                        'apellido': parent1LastName,
+                        'empleo': parent1Employment,
+                        'ingresos': parent1Income  
+                    },
+                    'parent': parent2Gender {
+                        'name': parent2Name,
+                        'segundo': parent2MiddleName,
+                        'apellido': parent2LastName,
+                        'empleo': parent2Employment,
+                        'ingresos': parent2Income  
+                    }
+                ]
             },
             success: function(res) {
                 alert('niño inserta');
