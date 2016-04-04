@@ -47,6 +47,11 @@ $(document).ready(function() {
         var parent1Name = $('#parent1-first-name').val();
         var parent1MiddleName = $('#parent1-middle-name').val();
         var parent1LastName = $('#parent1-last-name').val();
+        var parent1Birthday = $('#parent1-birthday-day').val();
+        var parent1Address = $('#parent1-address').val();
+        var parent1City = $('#parent1-address-city').val();
+        var parent1Province = $('#parent1-address-province').val();
+        var parent1Zip = $('#parent1-address-zip-code').val();
         var parent1Employment = $('#parent1-employment').val();
         var parent1Income = $('#parent1-income').val();
         //parent 2 - only get values if there is a second parent
@@ -55,6 +60,11 @@ $(document).ready(function() {
             var parent2Name = $('#parent2-first-name').val();
             var parent2MiddleName = $('#parent2-middle-name').val();
             var parent2LastName = $('#parent2-last-name').val();
+            var parent2Birthday = $('#parent2-birthday-day').val();
+            var parent2Address = $('#parent2-address').val();
+            var parent2City = $('#parent2-address-city').val();
+            var parent2Province = $('#parent2-address-province').val();
+            var parent2Zip = $('#parent2-address-zip-code').val();
             var parent2Employment = $('#parent2-employment').val();
             var parent2Income = $('#parent2-income').val();
         }
@@ -201,20 +211,120 @@ $(document).ready(function() {
                 'picture': picture,
                 'parents': [{   
                         'parent': parent1Gender,
-                        'name': parent1Name,
+                        'nombre': parent1Name,
                         'segundo': parent1MiddleName,
                         'apellido': parent1LastName,
+                        'cumpleaños': parent1Birthday,
+                        'direccion_de_casa': parent1Address,
+                        'ciudad': parent1City,
+                        'provinica': parent1Province,
+                        'código_postal': parent1Zip,
                         'empleo': parent1Employment,
                         'ingresos': parent1Income  
                     }, {
                         'parent': parent2Gender,
-                        'name': parent2Name,
+                        'nombre': parent2Name,
                         'segundo': parent2MiddleName,
                         'apellido': parent2LastName,
+                        'cumpleaños': parent2Birthday,
+                        'direccion_de_casa': parent2Address,
+                        'ciudad': parent2City,
+                        'provinica': parent2Province,
+                        'código_postal': parent2Zip,
                         'empleo': parent2Employment,
                         'ingresos': parent2Income  
-                    }
-                ]
+                    }],
+                'siblings': [{
+                    'nombre': sibling1Name,
+                    'segundo': sibling1MiddleName,
+                    'apellido': sibling1LastName,
+                    'género': sibling1Gender,
+                    'cumpleaños': sibling1Birthday
+                }, {
+                    'nombre': sibling2Name,
+                    'segundo': sibling2MiddleName,
+                    'apellido': sibling2LastName,
+                    'género': sibling2Gender,
+                    'cumpleaños': sibling2Birthday
+                }, {
+                    'nombre': sibling3Name,
+                    'segundo': sibling3MiddleName,
+                    'apellido': sibling3LastName,
+                    'género': sibling3Gender,
+                    'cumpleaños': sibling3Birthday
+                }, {
+                    'nombre': sibling4Name,
+                    'segundo': sibling4MiddleName,
+                    'apellido': sibling4LastName,
+                    'género': sibling4Gender,
+                    'cumpleaños': sibling4Birthday
+                }, {
+                    'nombre': sibling5Name,
+                    'segundo': sibling5MiddleName,
+                    'apellido': sibling5LastName,
+                    'género': sibling5Gender,
+                    'cumpleaños': sibling5Birthday
+                }, {
+                    'nombre': sibling6Name,
+                    'segundo': sibling6MiddleName,
+                    'apellido': sibling6LastName,
+                    'género': sibling6Gender,
+                    'cumpleaños': sibling6Birthday
+                }, {
+                    'nombre': sibling7Name,
+                    'segundo': sibling7MiddleName,
+                    'apellido': sibling7LastName,
+                    'género': sibling7Gender,
+                    'cumpleaños': sibling7Birthday
+                }, {
+                    'nombre': sibling8Name,
+                    'segundo': sibling8MiddleName,
+                    'apellido': sibling8LastName,
+                    'género': sibling8Gender,
+                    'cumpleaños': sibling8Birthday
+                }, {
+                    'nombre': sibling9Name,
+                    'segundo': sibling9MiddleName,
+                    'apellido': sibling9LastName,
+                    'género': sibling9Gender,
+                    'cumpleaños': sibling9Birthday
+                }, {
+                    'nombre': sibling10Name,
+                    'segundo': sibling10MiddleName,
+                    'apellido': sibling10LastName,
+                    'género': sibling10Gender,
+                    'cumpleaños': sibling10Birthday
+                }, {
+                    'nombre': sibling11Name,
+                    'segundo': sibling11MiddleName,
+                    'apellido': sibling11LastName,
+                    'género': sibling11Gender,
+                    'cumpleaños': sibling11Birthday
+                }, {
+                    'nombre': sibling12Name,
+                    'segundo': sibling12MiddleName,
+                    'apellido': sibling12LastName,
+                    'género': sibling12Gender,
+                    'cumpleaños': sibling12Birthday
+                }, {
+                    'nombre': sibling13Name,
+                    'segundo': sibling13MiddleName,
+                    'apellido': sibling13LastName,
+                    'género': sibling13Gender,
+                    'cumpleaños': sibling13Birthday
+                }, {
+                    'nombre': sibling14Name,
+                    'segundo': sibling14MiddleName,
+                    'apellido': sibling14LastName,
+                    'género': sibling14Gender,
+                    'cumpleaños': sibling14Birthday
+                }, {
+                    'nombre': sibling15Name,
+                    'segundo': sibling15MiddleName,
+                    'apellido': sibling15LastName,
+                    'género': sibling15Gender,
+                    'cumpleaños': sibling15Birthday
+                }]
             },
             success: function(res) {
                 alert('niño inserta');
@@ -274,6 +384,17 @@ $(document).ready(function() {
         if ($('.parents-expanded').css('display') == 'none') {
             $('.parents-expanded').show();
             document.getElementById('add-a-parent').innerHTML = 'Remove a parent';
+            $('#parent2-gender').val('');
+            $('#parent2-first-name').val('');
+            $('#parent2-middle-name').val('');
+            $('#parent2-last-name').val('');
+            $('#parent2-birthday-day').val('');
+            $('#parent2-address').val('');
+            $('#parent2-address-city').val('');
+            $('#parent2-address-province').val('');
+            $('#parent2-address-zip-code').val('');
+            $('#parent2-employment').val('');
+            $('#parent2-income').val('');
         }
         else {
             $('.parents-expanded').hide();
@@ -293,6 +414,11 @@ $(document).ready(function() {
 
     $('#remove-a-sibling').click(function() {
         numSiblings--;
+        console.log('#sibling' + numSiblings +'-first-name');
+        $('#sibling' + numSiblings +'-first-name').val('');
+        $('#sibling' + numSiblings +'-middle-name').val('');
+        $('#sibling' + numSiblings +'-last-name').val('');
+        $('#sibling' + numSiblings +'-gender').val('');
         $('.siblings-expanded-' + numSiblings).hide();
         if (numSiblings <= 1) {
             $('#remove-a-sibling').hide();
