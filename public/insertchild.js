@@ -199,15 +199,15 @@ $(document).ready(function() {
                 'aficiones': hobbies,
                 'biodata': biodata,
                 'picture': picture,
-                'parents': [
-                    'parent': parent1Gender {
+                'parents': [{   
+                        'parent': parent1Gender,
                         'name': parent1Name,
                         'segundo': parent1MiddleName,
                         'apellido': parent1LastName,
                         'empleo': parent1Employment,
                         'ingresos': parent1Income  
-                    },
-                    'parent': parent2Gender {
+                    }, {
+                        'parent': parent2Gender,
                         'name': parent2Name,
                         'segundo': parent2MiddleName,
                         'apellido': parent2LastName,
