@@ -56,6 +56,18 @@ hr {
     margin-right: .25em;
 }
 
+.parents-expanded-1 {
+    display: none;
+}
+
+.parents-expanded-2 {
+    display: none;
+}
+
+#remove-a-parent {
+    display: none;
+}
+
 .siblings-expanded-1 {
     display: none;
 }

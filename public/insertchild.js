@@ -381,9 +381,19 @@ $(document).ready(function() {
     }
 
     $('#add-a-parent').click(function() {
-        if ($('.parents-expanded').css('display') == 'none') {
-            $('.parents-expanded').show();
-            document.getElementById('add-a-parent').innerHTML = 'Remove a parent';
+        if ($('.parents-expanded-1').css('display') == 'none') {
+            $('.parents-expanded-1').show();
+            $('#remove-a-parent').show();
+        }
+        else {
+            $('.parents-expanded-2').show();
+            $('#add-a-parent').hide();
+        }
+    });
+
+    $('#remove-a-parent').click(function() {
+        if ($('.parents-expanded-2').css('display') != 'none') {
+            $('.parents-expanded-2').hide();
             $('#parent2-gender').val('');
             $('#parent2-first-name').val('');
             $('#parent2-middle-name').val('');
@@ -395,11 +405,23 @@ $(document).ready(function() {
             $('#parent2-address-zip-code').val('');
             $('#parent2-employment').val('');
             $('#parent2-income').val('');
+            $('#add-a-parent').show();  
+        } else {
+            $('.parents-expanded-1').hide();
+            $('#parent1-gender').val('');
+            $('#parent1-first-name').val('');
+            $('#parent1-middle-name').val('');
+            $('#parent1-last-name').val('');
+            $('#parent1-birthday-day').val('');
+            $('#parent1-address').val('');
+            $('#parent1-address-city').val('');
+            $('#parent1-address-province').val('');
+            $('#parent1-address-zip-code').val('');
+            $('#parent1-employment').val('');
+            $('#parent1-income').val('');
+            $('#remove-a-parent').hide();
         }
-        else {
-            $('.parents-expanded').hide();
-            document.getElementById('add-a-parent').innerHTML = 'Add a parent';
-        }
+        
     });
 
     var numSiblings = 1;
