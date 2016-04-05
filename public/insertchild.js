@@ -380,6 +380,7 @@ $(document).ready(function() {
         reader.readAsDataURL(e.target.files[0]);
     }
 
+    //button functionality for parent forms
     $('#add-a-parent').click(function() {
         if ($('.parents-expanded-1').css('display') == 'none') {
             $('.parents-expanded-1').show();
@@ -424,6 +425,7 @@ $(document).ready(function() {
         
     });
 
+    //button functionality for sibling forms
     var numSiblings = 1;
     $('#add-a-sibling').click(function() {
         if (numSiblings >= 15) {

@@ -166,16 +166,26 @@
             </div>
 
             <div class="col-md-12 parents">
-                <label class="col-md-4 control-label">Padre</label>
+                <label class="col-md-4 control-label">Guardian</label>
 
                 <div class="parents-expanded-1">
                     <div class="col-md-8"></div>
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Padre</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent1-gender" class="form-control">
+                        <select id="parent1-gender" class="form-control" onChange="parent1GenderOptions();">
                             <option value="Padre">Padre</option>
                             <option value="Madre">Madre</option>
+                            <option value="Cousin">Cousin</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Sister">Sister</option>
+                            <option value="Grandfather">Grandfather</option>
+                            <option value="Grandmother">Grandmother</option>
+                            <option value="Aunt">Aunt</option>
+                            <option value="Oncle">Oncle</option>
+                            <option value="StepFather">Step-Father</option>
+                            <option value="StepMother">Step-Mother</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <label class="col-md-4 control-label">Nombre</label>
@@ -299,6 +309,19 @@
                     <div class="col-md-8 child-input">
                         <input id="parent1-income" class="form-control required" type="text" name="parent1-income">
                     </div>
+                    <div id="parent1-absent-form" class="is-absent-form">
+                        <label class="col-md-4 control-label">Is Absent?</label>
+                        <div class="col-md-8 child-input">
+                            <select id="parent1-absent" class="form-control">
+                                <option value="null"></option>
+                                <option value="isAbsent">Yes</option>
+                                <option value="notAbsent">No</option>
+                                <option value="prison">Prison</option>
+                                <option value="deceased">Deceased</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="col-md-4"></div>
                 </div>
                 <div class="parents-expanded-2">
@@ -306,9 +329,19 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Padre</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent2-gender" class="form-control">
+                        <select id="parent2-gender" class="form-control" onChange="parent2GenderOptions();">
                             <option value="Padre">Padre</option>
                             <option value="Madre">Madre</option>
+                            <option value="Cousin">Cousin</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Sister">Sister</option>
+                            <option value="Grandfather">Grandfather</option>
+                            <option value="Grandmother">Grandmother</option>
+                            <option value="Aunt">Aunt</option>
+                            <option value="Oncle">Oncle</option>
+                            <option value="StepFather">Step-Father</option>
+                            <option value="StepMother">Step-Mother</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <label class="col-md-4 control-label">Nombre</label>
@@ -431,6 +464,19 @@
                     <label class="col-md-4 control-label">Income</label>
                     <div class="col-md-8 child-input">
                         <input id="parent2-income" class="form-control" type="text" name="parent2-income">
+                    </div>
+                    <div id="parent2-absent-form" class="is-absent-form">
+                        <label class="col-md-4 control-label">Is Absent?</label>
+                        <div class="col-md-8 child-input">
+                            <select id="parent1-absent" class="form-control">
+                                <option value="null"></option>
+                                <option value="isAbsent">Yes</option>
+                                <option value="notAbsent">No</option>
+                                <option value="prison">Prison</option>
+                                <option value="deceased">Deceased</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -2116,3 +2162,27 @@
         </div>
     <body>
 </html>
+
+<script type="text/javascript">
+    function parent1GenderOptions(){
+        var option = document.getElementById("parent1-gender").value;
+        if(option == "Padre" || option == "Madre"){
+            console.log('clicked');
+            document.getElementById("parent1-absent-form").style.display = "block";
+        }
+        else {
+            document.getElementById("parent1-absent-form").style.display = "none";   
+        }
+    }
+
+    function parent2GenderOptions(){
+        var option = document.getElementById("parent2-gender").value;
+        if(option == "Padre" || option == "Madre"){
+            console.log('clicked');
+            document.getElementById("parent2-absent-form").style.display = "block";
+        }
+        else {
+            document.getElementById("parent2-absent-form").style.display = "none";   
+        }
+    }
+</script>
