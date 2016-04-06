@@ -28,6 +28,7 @@ $(document).ready(function() {
 
     // on submit button click, collect all form data and submit child to DB
     $('#child-submit').click(function() {
+        var altID = $('#alt-id').val();
         var name = $('#child-first-name').val();
         var middleName = $('#child-middle-name').val();
         var lastName = $('#child-last-name').val();
@@ -41,7 +42,29 @@ $(document).ready(function() {
         var status = $('#child-status').val();
         var hobbies = $('#child-hobbies').val();
         var biodata = $('#child-biodata').val();
-        var picture = document.getElementById('imageCanvas').toDataURL();
+        //if there is no picture added, dont load picture
+        if (document.getElementById("imageLoader").files.length != 0) {
+            var picture = document.getElementById('imageCanvas').toDataURL();
+        }
+        // getting the values from the education form
+        var isAttendingSchool = $('#isAttendingSchool').val();
+        if (isAttendingSchool == 'true') {
+            var grade = $('#grade').val();
+            var schoolName = $('#school-name').val();
+            var schoolPhone = $('#school-phone').val();
+            var schoolAddress = $('#school-address').val();
+            var schoolCity = $('#school-city').val();
+            var schoolZip = $('#school-postal-code').val();
+            var schoolPerformance = $('#school-performance').val();
+            var schoolFeelings = $('#school-feelings').val();
+            var schoolHelp = $('#school-help').val();
+            var schoolSupplies = $('#school-supplies').val();
+            var favoriteSubject = $('#favorite-subject').val();
+            var futureJob = $('#desired-occupation').val();
+        } else {
+            var notAttending = $('#no-school-reason').val();
+        }
+
         //parent 1
         var parent1Gender = $('#parent1-gender').val();
         var parent1Name = $('#parent1-first-name').val();
@@ -55,10 +78,10 @@ $(document).ready(function() {
         var parent1Employment = $('#parent1-employment').val();
         var parent1Income = $('#parent1-income').val();
         if ($('#parent1-absent').css('display') != 'none') {
-            var parent1-absent = $('#parent1-absent').val();
+            var parent1Absent = $('#parent1-absent').val();
         }
         //parent 2 - only get values if there is a second parent
-        if ($('.parents-expanded').css('display') != 'none') {
+        if ($('.parents-expanded-2').css('display') != 'none') {
             var parent2Gender = $('#parent2-gender').val();
             var parent2Name = $('#parent2-first-name').val();
             var parent2MiddleName = $('#parent2-middle-name').val();
@@ -71,7 +94,7 @@ $(document).ready(function() {
             var parent2Employment = $('#parent2-employment').val();
             var parent2Income = $('#parent2-income').val();
             if ($('#parent2-absent').css('display') != 'none') {
-                var parent2-absent = $('#parent2-absent').val();
+                var parent2Absent = $('#parent2-absent').val();
             }
         }
         //sibling 1 - only get values if there is a sibling
@@ -232,7 +255,9 @@ $(document).ready(function() {
             url: '/api/v1/child/insert',
             type: 'POST',
             data: {
+                'alt_id': altID,
                 'nombre': name,
+                'segundo': middleName,
                 'apellido': lastName,
                 'género': gender,
                 'cumpleaños': birthday,
@@ -245,7 +270,22 @@ $(document).ready(function() {
                 'aficiones': hobbies,
                 'biodata': biodata,
                 'picture': picture,
-                'parents': [{   
+                'attending_school': isAttendingSchool,
+                'reason_not_attending': notAttending,
+                'grade': grade,
+                'school_name': schoolName,
+                'school_phone': schoolPhone,
+                'school_address': schoolAddress,
+                'school_city': schoolCity,
+                'school_postal_code': schoolZip,
+                'school_performance': schoolPerformance,
+                'school_feelings': schoolFeelings,
+                'homework_help': schoolHelp,
+                'school_suplplies': schoolSupplies,
+                'favorite_subject': favoriteSubject,
+                'favorite_job': futureJob,
+                'parents': [
+                    {   
                         'parent': parent1Gender,
                         'nombre': parent1Name,
                         'segundo': parent1MiddleName,
@@ -271,102 +311,105 @@ $(document).ready(function() {
                         'empleo': parent2Employment,
                         'ingresos': parent2Income,
                         'absent': parent2Absent
-                    }],
-                'siblings': [{
-                    'nombre': sibling1Name,
-                    'segundo': sibling1MiddleName,
-                    'apellido': sibling1LastName,
-                    'género': sibling1Gender,
-                    'cumpleaños': sibling1Birthday,
-                    'occupation': sibling1Occupation,
-                    'isSponsored': sibling1Sponsored
-                }, {
-                    'nombre': sibling2Name,
-                    'segundo': sibling2MiddleName,
-                    'apellido': sibling2LastName,
-                    'género': sibling2Gender,
-                    'cumpleaños': sibling2Birthday,
-                    'occupation': sibling2Occupation,
-                    'isSponsored': sibling2Sponsored
-                }, {
-                    'nombre': sibling3Name,
-                    'segundo': sibling3MiddleName,
-                    'apellido': sibling3LastName,
-                    'género': sibling3Gender,
-                    'cumpleaños': sibling3Birthday
-                }, {
-                    'nombre': sibling4Name,
-                    'segundo': sibling4MiddleName,
-                    'apellido': sibling4LastName,
-                    'género': sibling4Gender,
-                    'cumpleaños': sibling4Birthday
-                }, {
-                    'nombre': sibling5Name,
-                    'segundo': sibling5MiddleName,
-                    'apellido': sibling5LastName,
-                    'género': sibling5Gender,
-                    'cumpleaños': sibling5Birthday
-                }, {
-                    'nombre': sibling6Name,
-                    'segundo': sibling6MiddleName,
-                    'apellido': sibling6LastName,
-                    'género': sibling6Gender,
-                    'cumpleaños': sibling6Birthday
-                }, {
-                    'nombre': sibling7Name,
-                    'segundo': sibling7MiddleName,
-                    'apellido': sibling7LastName,
-                    'género': sibling7Gender,
-                    'cumpleaños': sibling7Birthday
-                }, {
-                    'nombre': sibling8Name,
-                    'segundo': sibling8MiddleName,
-                    'apellido': sibling8LastName,
-                    'género': sibling8Gender,
-                    'cumpleaños': sibling8Birthday
-                }, {
-                    'nombre': sibling9Name,
-                    'segundo': sibling9MiddleName,
-                    'apellido': sibling9LastName,
-                    'género': sibling9Gender,
-                    'cumpleaños': sibling9Birthday
-                }, {
-                    'nombre': sibling10Name,
-                    'segundo': sibling10MiddleName,
-                    'apellido': sibling10LastName,
-                    'género': sibling10Gender,
-                    'cumpleaños': sibling10Birthday
-                }, {
-                    'nombre': sibling11Name,
-                    'segundo': sibling11MiddleName,
-                    'apellido': sibling11LastName,
-                    'género': sibling11Gender,
-                    'cumpleaños': sibling11Birthday
-                }, {
-                    'nombre': sibling12Name,
-                    'segundo': sibling12MiddleName,
-                    'apellido': sibling12LastName,
-                    'género': sibling12Gender,
-                    'cumpleaños': sibling12Birthday
-                }, {
-                    'nombre': sibling13Name,
-                    'segundo': sibling13MiddleName,
-                    'apellido': sibling13LastName,
-                    'género': sibling13Gender,
-                    'cumpleaños': sibling13Birthday
-                }, {
-                    'nombre': sibling14Name,
-                    'segundo': sibling14MiddleName,
-                    'apellido': sibling14LastName,
-                    'género': sibling14Gender,
-                    'cumpleaños': sibling14Birthday
-                }, {
-                    'nombre': sibling15Name,
-                    'segundo': sibling15MiddleName,
-                    'apellido': sibling15LastName,
-                    'género': sibling15Gender,
-                    'cumpleaños': sibling15Birthday
-                }]
+                    }
+                ],
+                'siblings': [
+                    {
+                        'nombre': sibling1Name,
+                        'segundo': sibling1MiddleName,
+                        'apellido': sibling1LastName,
+                        'género': sibling1Gender,
+                        'cumpleaños': sibling1Birthday,
+                        'occupation': sibling1Occupation,
+                        'isSponsored': sibling1Sponsored
+                    }, {
+                        'nombre': sibling2Name,
+                        'segundo': sibling2MiddleName,
+                        'apellido': sibling2LastName,
+                        'género': sibling2Gender,
+                        'cumpleaños': sibling2Birthday,
+                        'occupation': sibling2Occupation,
+                        'isSponsored': sibling2Sponsored
+                    }, {
+                        'nombre': sibling3Name,
+                        'segundo': sibling3MiddleName,
+                        'apellido': sibling3LastName,
+                        'género': sibling3Gender,
+                        'cumpleaños': sibling3Birthday
+                    }, {
+                        'nombre': sibling4Name,
+                        'segundo': sibling4MiddleName,
+                        'apellido': sibling4LastName,
+                        'género': sibling4Gender,
+                        'cumpleaños': sibling4Birthday
+                    }, {
+                        'nombre': sibling5Name,
+                        'segundo': sibling5MiddleName,
+                        'apellido': sibling5LastName,
+                        'género': sibling5Gender,
+                        'cumpleaños': sibling5Birthday
+                    }, {
+                        'nombre': sibling6Name,
+                        'segundo': sibling6MiddleName,
+                        'apellido': sibling6LastName,
+                        'género': sibling6Gender,
+                        'cumpleaños': sibling6Birthday
+                    }, {
+                        'nombre': sibling7Name,
+                        'segundo': sibling7MiddleName,
+                        'apellido': sibling7LastName,
+                        'género': sibling7Gender,
+                        'cumpleaños': sibling7Birthday
+                    }, {
+                        'nombre': sibling8Name,
+                        'segundo': sibling8MiddleName,
+                        'apellido': sibling8LastName,
+                        'género': sibling8Gender,
+                        'cumpleaños': sibling8Birthday
+                    }, {
+                        'nombre': sibling9Name,
+                        'segundo': sibling9MiddleName,
+                        'apellido': sibling9LastName,
+                        'género': sibling9Gender,
+                        'cumpleaños': sibling9Birthday
+                    }, {
+                        'nombre': sibling10Name,
+                        'segundo': sibling10MiddleName,
+                        'apellido': sibling10LastName,
+                        'género': sibling10Gender,
+                        'cumpleaños': sibling10Birthday
+                    }, {
+                        'nombre': sibling11Name,
+                        'segundo': sibling11MiddleName,
+                        'apellido': sibling11LastName,
+                        'género': sibling11Gender,
+                        'cumpleaños': sibling11Birthday
+                    }, {
+                        'nombre': sibling12Name,
+                        'segundo': sibling12MiddleName,
+                        'apellido': sibling12LastName,
+                        'género': sibling12Gender,
+                        'cumpleaños': sibling12Birthday
+                    }, {
+                        'nombre': sibling13Name,
+                        'segundo': sibling13MiddleName,
+                        'apellido': sibling13LastName,
+                        'género': sibling13Gender,
+                        'cumpleaños': sibling13Birthday
+                    }, {
+                        'nombre': sibling14Name,
+                        'segundo': sibling14MiddleName,
+                        'apellido': sibling14LastName,
+                        'género': sibling14Gender,
+                        'cumpleaños': sibling14Birthday
+                    }, {
+                        'nombre': sibling15Name,
+                        'segundo': sibling15MiddleName,
+                        'apellido': sibling15LastName,
+                        'género': sibling15Gender,
+                        'cumpleaños': sibling15Birthday
+                    }
+                ]
             },
             success: function(res) {
                 alert('niño inserta');
@@ -421,6 +464,16 @@ $(document).ready(function() {
         }
         reader.readAsDataURL(e.target.files[0]);
     }
+
+    $('#education-button').click(function() {
+        if ($('.education-expanded').css('display') == 'none') {
+            $('.education-expanded').show();
+            $('#education-button').html('Hide Education');
+        } else {
+            $('.education-expanded').hide();
+            $('#education-button').html('Add Education');
+        }
+    });
 
     //button functionality for parent forms
     $('#add-a-parent').click(function() {

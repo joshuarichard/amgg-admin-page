@@ -56,6 +56,14 @@ hr {
     margin-right: .25em;
 }
 
+.education-expanded {
+    display: none;
+}
+
+#not-attending-school {
+    display: none;
+}
+
 .parents-expanded-1 {
     display: none;
 }

@@ -24,6 +24,14 @@
               <img src="./amgg-logo.png" class="col-md-6 no-gutter" alt="AMG Guatemala Logo">
               <h2 class="col-md-6">Ingreso de niño/niña</h2>
             </div>
+            <label class="col-md-4 control-label">ID</label>
+            <div class="col-md-8 child-input">
+                <input id="id" class="form-control required" type="text" name="id">
+            </div>
+            <label class="col-md-4 control-label">Alt ID</label>
+            <div class="col-md-8 child-input">
+                <input id="alt-id" class="form-control required" type="text" name="alt-id">
+            </div>
             <label class="col-md-4 control-label">Nombre</label>
             <div class="col-md-8 child-input">
                 <input id="child-first-name" class="form-control required" type="text" name="first-name">
@@ -150,11 +158,18 @@
             </div>
             <label class="col-md-4 control-label">Estado</label>
             <div class="col-md-8 child-input">
-                <select id="child-status" class="form-control">
+                <select id="child-status" class="form-control" onChange="sponsored()">
+                    <option value="sponsored">Sponsored</option>
                     <option value="Waiting for Sponsor - No Prior Sponsor">Waiting for Sponsor - No Prior Sponsor</option>
                     <option value="Waiting for Sponsor - Discontinued">Waiting for Sponsor - Discontinued</option>
                     <option value="Additional Sponsor Needed">Additional Sponsor Needed</option>
                 </select>
+            </div>
+            <div id="is-sponsored">
+                <label class="col-md-4 control-label">Sponsor ID</label>
+                <div class="col-md-8 child-input">
+                    <input id="donor-id" class="form-control required" type="text" name="donor-id">
+                </div>
             </div>
             <label class="col-md-4 control-label">Pasatiempos</label>
             <div class="col-md-8 child-input">
@@ -165,6 +180,107 @@
                 <textarea id="child-biodata" class="form-control" rows="5" name="biodata"></textarea>
             </div>
 
+            <div class="col-md-12 education">
+                <label class="col-md-4 control-label">Education</label>
+
+                <div class="education-expanded">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-12"><hr></div>
+                    <label class="col-md-4 control-label" title="Is the child attending school?">Attending School?</label>
+                    <div class="col-md-8 child-input" title="Is the child attending school?">
+                        <select id="isAttendingSchool" class="form-control" onChange="attendingSchool();">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div id="not-attending-school">
+                        <label class="col-md-4 control-label" title="Reason the child is not attending school">Why not?</label>
+                        <div class="col-md-8 child-input" title="Reason the child is not attending school">
+                            <input id="no-school-reason" class="form-control required" type="text" name="reason">
+                        </div>
+                    </div>
+                    <div id="attending-school">
+                        <label class="col-md-4 control-label" title="What grade is the child in?">Grade</label>
+                        <div class="col-md-8 child-input" title="What grade is the child in?">
+                            <select id="grade" class="form-control">
+                                <option value="kindergarten">Kindergarten</option>
+                                <option value="1">1st Grade</option>
+                                <option value="2">2nd Grade</option>
+                                <option value="3">3rd Grade</option>
+                                <option value="4">4th Grade</option>
+                                <option value="5">5th Grade</option>
+                                <option value="6">6th Grade</option>
+                                <option value="7">7th Grade</option>
+                                <option value="8">8th Grade</option>
+                                <option value="9">9th Grade</option>
+                                <option value="10">10th Grade</option>
+                                <option value="11">11th Grade</option>
+                                <option value="12">12th Grade</option>
+                            </select>
+                        </div>
+                        <label class="col-md-4 control-label" title="Name of the school">Name of School</label>
+                        <div class="col-md-8 child-input" title="Name of the school">
+                            <input id="school-name" class="form-control" type="text" name="school-name">
+                        </div>
+                        <label class="col-md-4 control-label" title="Phone number of the school">Phone Number</label>
+                        <div class="col-md-8 child-input" title="Phone number of the school">
+                            <input id="school-phone" class="form-control" type="text" name="school-phone">
+                        </div>
+                        <label class="col-md-4 control-label" title="Address of the school">Address</label>
+                        <div class="col-md-8 child-input" title="Address of the school">
+                            <input id="school-address" class="form-control" type="text" name="school-address">
+                        </div>
+                        <label class="col-md-4 control-label" title="City/Province the school is in">City/Province</label>
+                        <div class="col-md-8 child-input" title="City/Province the school is in">
+                            <input id="school-city" class="form-control" type="text" name="school-city">
+                        </div>
+                        <label class="col-md-4 control-label" title="Postal code of the school">Postal Code</label>
+                        <div class="col-md-8 child-input" title="Postal code of the school">
+                            <input id="school-postal-code" class="form-control" type="text" name="school-postal-code">
+                        </div>
+                        <label class="col-md-4 control-label" title="How is the child doing in school?">School Performance</label>
+                        <div class="col-md-8 child-input" title="How is the child doing in school?">
+                            <select id="school-performance" class="form-control">
+                                <option value=""></option>
+                                <option value="Below_Average">Below Average</option>
+                                <option value="Average">Average</option>
+                                <option value="Above_Average">Above Average</option>
+                            </select>
+                        </div>
+                        <label class="col-md-4 control-label" title="How does the child feel when in school?">Feelings in School</label>
+                        <div class="col-md-8 child-input" title="How does the child feel when in school?">
+                            <select id="school-feelings" class="form-control">
+                                <option value=""></option>
+                                <option value="Loved_and_Respected">Loved and Respected</option>
+                                <option value="Not_Loved_or_Rejected">Not loved or rejected</option>
+                                <option value="Not_Important_or_Ignored">Not important or ignored</option>
+                                <option value="Annoying_and_a_Nuisance_to_Others">Annoying and a nuisance to other</option>
+                            </select>
+                        </div>
+                        <label class="col-md-4 control-label" title="Who helps the child do their homework (leave blank if none or unknown)">Homework Help</label>
+                        <div class="col-md-8 child-input" title="Who helps the child do their homework (leave blank if none or unknown)">
+                            <input id="school-help" class="form-control" type="text" name="school-help">
+                        </div>
+                        <label class="col-md-4 control-label" title="Who provides the childs school supplies">Supplies Provided By</label>
+                        <div class="col-md-8 child-input" title="Who provides the childs school supplies">
+                            <input id="school-supplies" class="form-control" type="text" name="school-supplies">
+                        </div>
+                        <label class="col-md-4 control-label" title="What is the child's favorite school subject">Favorite Subject</label>
+                        <div class="col-md-8 child-input" title="What is the child's favorite school subject">
+                            <input id="favorite-subject" class="form-control" type="text" name="favorite-subject">
+                        </div>
+                        <label class="col-md-4 control-label" title="What job does the child want when they grow up?">Desired Occupation</label>
+                        <div class="col-md-8 child-input" title="What job does the child want when they grow up?">
+                            <input id="desired-occupation" class="form-control" type="text" name="desired-occupation">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="col-md-8 child-input pull-left">
+                    <button id="education-button" class="btn btn-primary btn-md" type="button">Add Education</button>
+                </div>
+            </div>
             <div class="col-md-12 parents">
                 <label class="col-md-4 control-label">Guardian</label>
 
@@ -721,11 +837,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling2-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling2-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -843,11 +959,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling3-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling3-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -965,11 +1081,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling4-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling4-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1087,11 +1203,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling5-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling5-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1209,11 +1325,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling6-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling6-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1331,11 +1447,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling7-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling7-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1453,11 +1569,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling8-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling8-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1575,11 +1691,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling9-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling9-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1697,11 +1813,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling10-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling10-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1819,11 +1935,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling11-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling11-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -1941,11 +2057,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling12-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling12-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -2063,11 +2179,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling13-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling13-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -2185,11 +2301,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling14-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling14-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -2307,11 +2423,11 @@
                     </div>
                     <label class="col-md-4 control-label">Grade or Occupation</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-occupation" class="form-control" type="text" name="occupation">
+                        <input id="sibling15-occupation" class="form-control" type="text" name="occupation">
                     </div>
                     <label class="col-md-4 control-label">Sponsored?</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-is-sponsored" class="form-control">
+                        <select id="sibling15-is-sponsored" class="form-control">
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                             <option value="not-part-of-program">Not part of program</option>
@@ -2344,10 +2460,31 @@
 </html>
 
 <script type="text/javascript">
+    function attendingSchool() {
+        var option = document.getElementById("isAttendingSchool").value;
+        if(option == "false"){
+            document.getElementById("not-attending-school").style.display = "block";
+            document.getElementById("attending-school").style.display = "none";
+        }
+        else {
+            document.getElementById("not-attending-school").style.display = "none";
+            document.getElementById("attending-school").style.display = "block";
+        }
+    }
+
+    function sponsored() {
+        var option = document.getElementById("child-status").value;
+        if(option == "sponsored"){
+            document.getElementById("is-sponsored").style.display = "block";
+        }
+        else {
+            document.getElementById("is-sponsored").style.display = "none";   
+        }
+    }
+
     function parent1GenderOptions(){
         var option = document.getElementById("parent1-gender").value;
         if(option == "Padre" || option == "Madre"){
-            console.log('clicked');
             document.getElementById("parent1-absent-form").style.display = "block";
         }
         else {
@@ -2358,7 +2495,6 @@
     function parent2GenderOptions(){
         var option = document.getElementById("parent2-gender").value;
         if(option == "Padre" || option == "Madre"){
-            console.log('clicked');
             document.getElementById("parent2-absent-form").style.display = "block";
         }
         else {
