@@ -7,7 +7,7 @@ $(document).ready(function() {
     // 5. confirm with brian about fields
     // 6. fix disabled submit button
 
-    disable the child submit button to start...
+    //disable the child submit button to start...
     $('#child-submit').prop('disabled', true);
 
     // ... and check every keyup to see if all required fields are full. if
@@ -282,6 +282,7 @@ $(document).ready(function() {
                 'apellido': lastName,
                 'género': gender,
                 'cumpleaños': birthday,
+                'test_date': new Date(1995, 11, 17),
                 'direccion_de_casa': address,
                 'ciudad': city,
                 'provinica': province,
