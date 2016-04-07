@@ -60,6 +60,10 @@ hr {
     display: none;
 }
 
+.health-expanded {
+    display: none;
+}
+
 #not-attending-school {
     display: none;
 }

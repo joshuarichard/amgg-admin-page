@@ -7,24 +7,24 @@ $(document).ready(function() {
     // 5. confirm with brian about fields
 
     // disable the child submit button to start...
-    $('#child-submit').prop('disabled', true);
+    // $('#child-submit').prop('disabled', true);
 
     // ... and check every keyup to see if all required fields are full. if
     // they're all accounted for then enable the button
-    $('.required').keyup(function() {
-        var emptyFields = false;
-        $('.required').each(function() {
-            if ($(this).val() === '') {
-                emptyFields = true;
-            }
-        });
+    // $('.required').keyup(function() {
+    //     var emptyFields = false;
+    //     $('.required').each(function() {
+    //         if ($(this).val() === '') {
+    //             emptyFields = true;
+    //         }
+    //     });
 
-        if (emptyFields === false) {
-            $('#child-submit').prop('disabled', false);
-        } else {
-            $('#child-submit').prop('disabled', true);
-        }
-    });
+    //     if (emptyFields === false) {
+    //         $('#child-submit').prop('disabled', false);
+    //     } else {
+    //         $('#child-submit').prop('disabled', true);
+    //     }
+    // });
 
     // on submit button click, collect all form data and submit child to DB
     $('#child-submit').click(function() {
@@ -46,6 +46,7 @@ $(document).ready(function() {
         if (document.getElementById("imageLoader").files.length != 0) {
             var picture = document.getElementById('imageCanvas').toDataURL();
         }
+
         // getting the values from the education form
         var isAttendingSchool = $('#isAttendingSchool').val();
         if (isAttendingSchool == 'true') {
@@ -65,20 +66,41 @@ $(document).ready(function() {
             var notAttending = $('#no-school-reason').val();
         }
 
+        //education
+        var illness = $('#chronic-illness').val();
+        var leftEye = $('#left-eye').val();
+        var rightEye = $('#right-eye').val();
+        var leftEar = $('#left-ear').val();
+        var rightEar = $('#right-ear').val();
+        var speech = $('#speech').val();
+        var spine = $('#spine').val();
+        var leftArm = $('#left-arm').val();
+        var rightArm = $('#right-arm').val();
+        var leftHand = $('#left-hand').val();
+        var rightHand = $('#right-hand').val();
+        var leftLeg = $('#left-leg').val();
+        var rightLeg = $('#right-leg').val();
+        var leftFoot = $('#left-foot').val();
+        var rightFoot = $('#right-foot').val();
+        var treatment = $('#treatment').val();
+        var medication = $('#medication').val();
+
         //parent 1
-        var parent1Gender = $('#parent1-gender').val();
-        var parent1Name = $('#parent1-first-name').val();
-        var parent1MiddleName = $('#parent1-middle-name').val();
-        var parent1LastName = $('#parent1-last-name').val();
-        var parent1Birthday = $('#parent1-birthday-day').val();
-        var parent1Address = $('#parent1-address').val();
-        var parent1City = $('#parent1-address-city').val();
-        var parent1Province = $('#parent1-address-province').val();
-        var parent1Zip = $('#parent1-address-zip-code').val();
-        var parent1Employment = $('#parent1-employment').val();
-        var parent1Income = $('#parent1-income').val();
-        if ($('#parent1-absent').css('display') != 'none') {
-            var parent1Absent = $('#parent1-absent').val();
+        if ($('.parents-expanded-1').css('display') != 'none') {
+            var parent1Gender = $('#parent1-gender').val();
+            var parent1Name = $('#parent1-first-name').val();
+            var parent1MiddleName = $('#parent1-middle-name').val();
+            var parent1LastName = $('#parent1-last-name').val();
+            var parent1Birthday = new Date($('#parent1-birthday-year').val(), $('#parent1-birthday-month').val() - 1, $('#parent1-birthday-day').val());
+            var parent1Address = $('#parent1-address').val();
+            var parent1City = $('#parent1-address-city').val();
+            var parent1Province = $('#parent1-address-province').val();
+            var parent1Zip = $('#parent1-address-zip-code').val();
+            var parent1Employment = $('#parent1-employment').val();
+            var parent1Income = $('#parent1-income').val();
+            if ($('#parent1-absent').css('display') != 'none') {
+                var parent1Absent = $('#parent1-absent').val();
+            }
         }
         //parent 2 - only get values if there is a second parent
         if ($('.parents-expanded-2').css('display') != 'none') {
@@ -86,7 +108,7 @@ $(document).ready(function() {
             var parent2Name = $('#parent2-first-name').val();
             var parent2MiddleName = $('#parent2-middle-name').val();
             var parent2LastName = $('#parent2-last-name').val();
-            var parent2Birthday = $('#parent2-birthday-day').val();
+            var parent2Birthday = new Date($('#parent2-birthday-year').val(), $('#parent2-birthday-month').val() - 1, $('#parent2-birthday-day').val());
             var parent2Address = $('#parent2-address').val();
             var parent2City = $('#parent2-address-city').val();
             var parent2Province = $('#parent2-address-province').val();
@@ -284,6 +306,23 @@ $(document).ready(function() {
                 'school_suplplies': schoolSupplies,
                 'favorite_subject': favoriteSubject,
                 'favorite_job': futureJob,
+                'chronic_illness': illness,
+                'left_eye': leftEye,
+                'right_eye': rightEye,
+                'left_ear': leftEar,
+                'right_ear': rightEar,
+                'speech': speech,
+                'spine': spine,
+                'left_arm': leftArm,
+                'right_arm': rightArm,
+                'left_hand': leftHand,
+                'right_hand': rightHand,
+                'left_leg': leftLeg,
+                'right_leg': rightLeg,
+                'left_foot': leftFoot,
+                'right_foot': rightFoot,
+                'treatment': treatment,
+                'medication': medication,
                 'parents': [
                     {   
                         'parent': parent1Gender,
@@ -471,7 +510,17 @@ $(document).ready(function() {
             $('#education-button').html('Hide Education');
         } else {
             $('.education-expanded').hide();
-            $('#education-button').html('Add Education');
+            $('#education-button').html('Show Education');
+        }
+    });
+
+    $('#health-button').click(function() {
+        if ($('.health-expanded').css('display') == 'none') {
+            $('.health-expanded').show();
+            $('#health-button').html('Hide Health');
+        } else {
+            $('.health-expanded').hide();
+            $('#health-button').html('Show Health');
         }
     });
 

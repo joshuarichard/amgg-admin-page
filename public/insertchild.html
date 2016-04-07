@@ -182,7 +182,6 @@
 
             <div class="col-md-12 education">
                 <label class="col-md-4 control-label">Education</label>
-
                 <div class="education-expanded">
                     <div class="col-md-8"></div>
                     <div class="col-md-12"><hr></div>
@@ -241,20 +240,20 @@
                         <label class="col-md-4 control-label" title="How is the child doing in school?">School Performance</label>
                         <div class="col-md-8 child-input" title="How is the child doing in school?">
                             <select id="school-performance" class="form-control">
-                                <option value=""></option>
-                                <option value="Below_Average">Below Average</option>
+                                <option value="">Not Selected</option>
+                                <option value="Below Average">Below Average</option>
                                 <option value="Average">Average</option>
-                                <option value="Above_Average">Above Average</option>
+                                <option value="Above Average">Above Average</option>
                             </select>
                         </div>
                         <label class="col-md-4 control-label" title="How does the child feel when in school?">Feelings in School</label>
                         <div class="col-md-8 child-input" title="How does the child feel when in school?">
                             <select id="school-feelings" class="form-control">
-                                <option value=""></option>
-                                <option value="Loved_and_Respected">Loved and Respected</option>
-                                <option value="Not_Loved_or_Rejected">Not loved or rejected</option>
-                                <option value="Not_Important_or_Ignored">Not important or ignored</option>
-                                <option value="Annoying_and_a_Nuisance_to_Others">Annoying and a nuisance to other</option>
+                                <option value="">Not Selected</option>
+                                <option value="Loved and Respected">Loved and Respected</option>
+                                <option value="Not Loved or Rejected">Not loved or rejected</option>
+                                <option value="Not Important or Ignored">Not important or ignored</option>
+                                <option value="Annoying and a Nuisance to Others">Annoying and a nuisance to other</option>
                             </select>
                         </div>
                         <label class="col-md-4 control-label" title="Who helps the child do their homework (leave blank if none or unknown)">Homework Help</label>
@@ -274,16 +273,172 @@
                             <input id="desired-occupation" class="form-control" type="text" name="desired-occupation">
                         </div>
                     </div>
-
                     <div class="col-md-4"></div>
                 </div>
                 <div class="col-md-8 child-input pull-left">
-                    <button id="education-button" class="btn btn-primary btn-md" type="button">Add Education</button>
+                    <button id="education-button" class="btn btn-primary btn-md" type="button">Show Education</button>
                 </div>
             </div>
+            <div class="col-md-12 physical-health">
+                <label class="col-md-4 control-label">Health</label>
+                <div class="health-expanded">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-12"><hr></div>
+                    <label class="col-md-4 control-label">Chronic Illnesses</label>
+                    <div class="col-md-8 child-input">
+                        <select id="chronic-illness" class="form-control" title="Does the child have any chronic illnesses?">
+                            <option value="None">None</option>
+                            <option value="Epilepsey">Epilepsy</option>
+                            <option value="Asthma">Asthma</option>
+                            <option value="Polio">Polio</option>
+                            <option value="Mentally Retarded">Mentally Retarded</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Left Eye</label>
+                    <div class="col-md-8 child-input">         
+                        <select id="left-eye" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Blind">Blind</option>
+                        </select>
+                    </div>                    
+                    <label class="col-md-4 control-label">Right Eye</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-eye" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Blind">Blind</option>
+                        </select>
+                    </div>                               
+                    <label class="col-md-4 control-label">Left Ear</label>
+                    <div class="col-md-8 child-input">
+                        <select id="left-ear" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Deaf">Deaf</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Right Ear</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-ear" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Deaf">Deaf</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Speech</label>
+                    <div class="col-md-8 child-input">
+                        <select id="speech" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Mute">Mute</option>
+                        </select>
+                    </div>  
+                    <label class="col-md-4 control-label">Spine</label>
+                    <div class="col-md-8 child-input">
+                        <select id="spine" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Left Arm</label>
+                    <div class="col-md-8 child-input">
+                        <select id="left-arm" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Right Arm</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-arm" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Left Hand</label>
+                    <div class="col-md-8 child-input">
+                        <select id="left-hand" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Right Hand</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-hand" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>                    
+                    </div>              
+                    <label class="col-md-4 control-label">Left Leg</label>
+                    <div class="col-md-8 child-input">
+                        <select id="left-leg" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>   
+                    <label class="col-md-4 control-label">Right Leg</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-leg" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>   
+                    <label class="col-md-4 control-label">Left Foot</label>
+                    <div class="col-md-8 child-input">
+                        <select id="left-foot" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>   
+                    <label class="col-md-4 control-label">Right Foot</label>
+                    <div class="col-md-8 child-input">
+                        <select id="right-foot" class="form-control" title="Please select what best describes the health of the child in this area.">
+                            <option value="Normal">Normal</option>
+                            <option value="Injury">Injury</option>
+                            <option value="Disease">Disease</option>
+                            <option value="Birth Defect">Birth Defect</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Receiving Treatment?</label>
+                    <div class="col-md-8 child-input">
+                        <select id="treatment" class="form-control" title="Is this child receiving medical treatment?">
+                            <option value="true">Yes</option>
+                            <option value="false" selected="selected">No</option>
+                        </select>
+                    </div>
+                    <label class="col-md-4 control-label">Regular medication?</label>
+                    <div class="col-md-8 child-input">
+                        <select id="medication" class="form-control" title="Does this child take regular medication?">
+                            <option value="true">Yes</option>
+                            <option value="false" selected="selected">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="col-md-8 child-input pull-left">
+                    <button id="health-button" class="btn btn-primary btn-md" type="button">Show Health</button>
+                </div>
+            </div>
+
+
             <div class="col-md-12 parents">
                 <label class="col-md-4 control-label">Guardian</label>
-
                 <div class="parents-expanded-1">
                     <div class="col-md-8"></div>
                     <div class="col-md-12"><hr></div>
@@ -429,7 +584,7 @@
                         <label class="col-md-4 control-label">Is Absent?</label>
                         <div class="col-md-8 child-input">
                             <select id="parent1-absent" class="form-control">
-                                <option value=""></option>
+                                <option value="">Not Selected</option>
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
                                 <option value="prison">Prison</option>
@@ -585,7 +740,7 @@
                         <label class="col-md-4 control-label">Is Absent?</label>
                         <div class="col-md-8 child-input">
                             <select id="parent1-absent" class="form-control">
-                                <option value=""></option>
+                                <option value="">Not Selected</option>
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
                                 <option value="prison">Prison</option>
