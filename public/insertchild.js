@@ -5,26 +5,27 @@ $(document).ready(function() {
     // 3. birthday swizzling
     // 4. age in mongodb as derived field?
     // 5. confirm with brian about fields
+    // 6. fix disabled submit button
 
-    // disable the child submit button to start...
-    // $('#child-submit').prop('disabled', true);
+    disable the child submit button to start...
+    $('#child-submit').prop('disabled', true);
 
     // ... and check every keyup to see if all required fields are full. if
     // they're all accounted for then enable the button
-    // $('.required').keyup(function() {
-    //     var emptyFields = false;
-    //     $('.required').each(function() {
-    //         if ($(this).val() === '') {
-    //             emptyFields = true;
-    //         }
-    //     });
+    $('.required').keyup(function() {
+        var emptyFields = false;
+        $('.required').each(function() {
+            if ($(this).val() === '') {
+                emptyFields = true;
+            }
+        });
 
-    //     if (emptyFields === false) {
-    //         $('#child-submit').prop('disabled', false);
-    //     } else {
-    //         $('#child-submit').prop('disabled', true);
-    //     }
-    // });
+        if (emptyFields === false) {
+            $('#child-submit').prop('disabled', false);
+        } else {
+            $('#child-submit').prop('disabled', true);
+        }
+    });
 
     // on submit button click, collect all form data and submit child to DB
     $('#child-submit').click(function() {
@@ -270,8 +271,6 @@ $(document).ready(function() {
             var sibling15Sponsored = $('#sibling15-is-sponsored').val();
         }
 
-        console.log();
-
         // define the request
         $.ajax({
             url: '/api/v1/child/insert',
@@ -452,7 +451,7 @@ $(document).ready(function() {
             },
             success: function(res) {
                 alert('niño inserta');
-                clearForm();
+                location.reload();
                 $('#child-submit').prop('disabled', true);
             },
             error: function(httpObj) {
@@ -462,23 +461,8 @@ $(document).ready(function() {
     });
 
     $('#clear-form').click(function() {
-        clearForm();
+        location.reload();
     });
-
-    function clearForm() {
-        $('#child-first-name').val('');
-        $('#child-middle-name').val('');
-        $('#child-last-name').val('');
-        $('#child-gender').val('');
-        // birthday
-        $('#child-address').val('');
-        $('#child-address-city').val('');
-        $('#child-address-province').val('');
-        $('#child-address-zip-code').val('');
-        $('#child-center').val('');
-        $('#child-hobbies').val('');
-        $('#child-biodata').val('');
-    }
 
     var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
