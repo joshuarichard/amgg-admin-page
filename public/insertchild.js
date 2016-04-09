@@ -1,32 +1,4 @@
 $(document).ready(function() {
-    // TODO:
-    // 1. upload photo
-    // 2. insert child doc and photo into db (base64 photo)
-    // 3. birthday swizzling
-    // 4. age in mongodb as derived field?
-    // 5. confirm with brian about fields
-    // 6. fix disabled submit button
-
-    //disable the child submit button to start...
-    $('#child-submit').prop('disabled', true);
-
-    // ... and check every keyup to see if all required fields are full. if
-    // they're all accounted for then enable the button
-    $('.required').keyup(function() {
-        var emptyFields = false;
-        $('.required').each(function() {
-            if ($(this).val() === '') {
-                emptyFields = true;
-            }
-        });
-
-        if (emptyFields === false) {
-            $('#child-submit').prop('disabled', false);
-        } else {
-            $('#child-submit').prop('disabled', true);
-        }
-    });
-
     // on submit button click, collect all form data and submit child to DB
     $('#child-submit').click(function() {
         var altID = $('#alt-id').val();
@@ -324,7 +296,7 @@ $(document).ready(function() {
                 'treatment': treatment,
                 'medication': medication,
                 'parents': [
-                    {   
+                    {
                         'parent': parent1Gender,
                         'nombre': parent1Name,
                         'segundo': parent1MiddleName,
@@ -535,7 +507,7 @@ $(document).ready(function() {
             $('#parent2-address-zip-code').val('');
             $('#parent2-employment').val('');
             $('#parent2-income').val('');
-            $('#add-a-parent').show();  
+            $('#add-a-parent').show();
         } else {
             $('.parents-expanded-1').hide();
             $('#parent1-gender').val('');
@@ -551,7 +523,7 @@ $(document).ready(function() {
             $('#parent1-income').val('');
             $('#remove-a-parent').hide();
         }
-        
+
     });
 
     //button functionality for sibling forms
