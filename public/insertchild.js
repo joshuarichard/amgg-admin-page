@@ -45,7 +45,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(parent1)) {
             data.padres.push(parent1);
-            data.padres[0]['cumpleaños'] = new Date($('#parent1-birthday-year').val(), $('#parent1-birthday-month').val() - 1, $('#parent1-birthday-day').val());
+            if ($('#parent1-birthday-year').val() != '') {
+                data.padres[0]['cumpleaños'] = new Date($('#parent1-birthday-year').val(), $('#parent1-birthday-month').val() - 1, $('#parent1-birthday-day').val());
+            }
         }
 
         var parent2 = { };
@@ -57,7 +59,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(parent2)) {
             data.padres.push(parent2);
-            data.padres[1]['cumpleaños'] = new Date($('#parent2-birthday-year').val(), $('#parent2-birthday-month').val() - 1, $('#parent2-birthday-day').val());
+            if ($('#parent2-birthday-year').val() != '') {
+                data.padres[1]['cumpleaños'] = new Date($('#parent2-birthday-year').val(), $('#parent2-birthday-month').val() - 1, $('#parent2-birthday-day').val());
+            }
         }
 
         data.hermanos = [];
@@ -70,7 +74,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling1)) {
             data.hermanos.push(sibling1);
-            data.hermanos[0]['cumpleaños'] = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
+            if ($('#sibling1-birthday-year').val() != '') {
+                data.hermanos[0]['cumpleaños'] = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
+            }
         }
 
         var sibling2 = { };
@@ -82,7 +88,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling2)) {
             data.hermanos.push(sibling2);
-            data.hermanos[1]['cumpleaños'] = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
+            if ($('#sibling2-birthday-year').val() != '') {
+                data.hermanos[1]['cumpleaños'] = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
+            }
         }
 
         var sibling3 = { };
@@ -94,7 +102,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling3)) {
             data.hermanos.push(sibling3);
-            data.hermanos[2]['cumpleaños'] = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
+            if ($('#sibling3-birthday-year').val() != '') {
+                data.hermanos[2]['cumpleaños'] = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
+            }
         }
 
         var sibling4 = { };
@@ -106,7 +116,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling4)) {
             data.hermanos.push(sibling4);
-            data.hermanos[3]['cumpleaños'] = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
+            if ($('#sibling4-birthday-year').val() != '') {
+                data.hermanos[3]['cumpleaños'] = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
+            }
         }
 
         var sibling5 = { };
@@ -118,7 +130,9 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling5)) {
             data.hermanos.push(sibling5);
-            data.hermanos[4]['cumpleaños'] = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
+            if ($('#sibling5-birthday-year').val() != '') {
+                data.hermanos[4]['cumpleaños'] = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
+            }
         }
 
         var sibling6 = { };
@@ -130,22 +144,41 @@ $(document).ready(function() {
         });
         if (!jQuery.isEmptyObject(sibling6)) {
             data.hermanos.push(sibling6);
-            data.hermanos[5]['cumpleaños'] = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
+            if ($('#sibling6-birthday-year').val() != '') {
+                data.hermanos[5]['cumpleaños'] = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
+            }
+        }
+        //check required fields are filled in
+        var checkFields = function() {
+            var passed = true;
+            $('.required').each(function() {
+                if($(this).val() == '' && $(this).parent().parent().css('display') != 'none') {
+                    console.log($(this) + $(this).parent().parent());
+                    $(this).css('border-color', 'red');
+                    passed = false;
+                }
+            });
+            return passed;
         }
 
-        // define the request
-        $.ajax({
-            url: '/api/v1/child/insert',
-            type: 'POST',
-            data: data,
-            success: function(res) {
-                alert('niño inserta');
-                location.reload();
-            },
-            error: function(httpObj) {
-                alert('que había un problema de insertar el niño');
-            }
-        });
+        //if all required fields are filled in, submit request
+        if(checkFields()) {
+            // define the request
+            $.ajax({
+                url: '/api/v1/child/insert',
+                type: 'POST',
+                data: data,
+                success: function(res) {
+                    alert('niño inserta');
+                    location.reload();
+                },
+                error: function(httpObj) {
+                    alert('que había un problema de insertar el niño');
+                }
+            });
+        } else {
+            alert('Please complete the highlighted fields');
+        }
     });
 
     $('#clear-form').click(function() {

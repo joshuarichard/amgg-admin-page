@@ -35,7 +35,7 @@
                 </div>
                 <label class="col-md-4 control-label">Segundo Nombre</label>
                 <div class="col-md-8 child-input">
-                    <input id="child-middle-name" class="form-control required" type="text" name="segundo">
+                    <input id="child-middle-name" class="form-control" type="text" name="segundo">
                 </div>
                 <label class="col-md-4 control-label">Apellidos</label>
                 <div class="col-md-8 child-input">
@@ -43,7 +43,7 @@
                 </div>
                 <label class="col-md-4 control-label">Género</label>
                 <div class="col-md-8 child-input">
-                    <select id="child-gender" class="form-control" name="género">
+                    <select id="child-gender" class="form-control required" name="género">
                         <option value="">No Seleccionado</option>
                         <option value="Mujer">Mujer</option>
                         <option value="Masculino">Masculino</option>
@@ -51,7 +51,7 @@
                 </div>
                 <label class="col-md-4 control-label">Cumpleaños</label>
                 <div class="col-md-8 child-input">
-                    <select id="child-birthday-day" class="form-control date" name="cumpleaños">
+                    <select id="child-birthday-day" class="form-control date required" name="cumpleaños">
                         <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -86,7 +86,7 @@
                         <option value="31">31</option>
                     </select>
                     /
-                    <select id="child-birthday-month" class="form-control date" name="cumpleaños">
+                    <select id="child-birthday-month" class="form-control date required" name="cumpleaños">
                         <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -102,7 +102,7 @@
                         <option value="12">12</option>
                     </select>
                     /
-                    <select id="child-birthday-year" class="form-control date" name="cumpleaños">
+                    <select id="child-birthday-year" class="form-control date required" name="cumpleaños">
                         <option value=""></option>
                         <option value="1995">1995</option>
                         <option value="1996">1996</option>
@@ -155,12 +155,32 @@
                 </div>
                 <label class="col-md-4 control-label">Centro/Colegio</label>
                 <div class="col-md-8 child-input">
-                    <input id="child-center" class="form-control required" type="text" name="centro_de_niños">
+                    <select id="child-center" class="form-control required" name="centro_de_niños">
+                        <option value="">No Seleccionado</option>
+                        <option value="Alta_Verapaz">Alta Verapaz</option>
+                        <option value="Baja_Verapaz">Baja Verapaz</option>
+                        <option value="Chimaltenango">Chimaltenango</option>
+                        <option value="Chiquimula">Chiquimula</option>
+                        <option value="El_Progreso">El Progreso</option>
+                        <option value="Escuintla">Escuintla</option>
+                        <option value="Huehuetenango">Huehuetenango</option>
+                        <option value="Izabal">Izabal</option>
+                        <option value="Jalapa">Jalapa</option>
+                        <option value="Jutiapa">Jutiapa</option>
+                        <option value="Peten">Peten</option>
+                        <option value="Quetzaltenango">Quetzaltenango</option>
+                        <option value="Huehuetenango">Huehuetenango</option>
+                        <option value="Quiche">Quiche</option>
+                        <option value="Retalhuleu">Retalhuleu</option>
+                        <option value="Sacatepequez">Sacatepequez</option>
+                        <option value="Solola">Solola</option>
+                        <option value="Suchitepequez">Suchitepequez</option>
+                    </select>
                 </div>
                 <label class="col-md-4 control-label">Estado</label>
                 <div class="col-md-8 child-input">
                     <!--onChange="sponsored()"-->
-                    <select id="child-status" class="form-control" name="estado">
+                    <select id="child-status" class="form-control required" name="estado">
                         <option value="">No Seleccionado</option>
                         <!-- <option value="sponsored">Sponsored</option> -->
                         <option value="Waiting for Sponsor - No Prior Sponsor">Waiting for Sponsor - No Prior Sponsor</option>
@@ -178,11 +198,11 @@
                 -->
                 <label class="col-md-4 control-label">Pasatiempos</label>
                 <div class="col-md-8 child-input">
-                    <input id="child-hobbies" class="form-control" type="text" name="pasatiempos">
+                    <input id="child-hobbies" class="form-control required" type="text" name="pasatiempos">
                 </div>
                 <label class="col-md-4 control-label">Historia</label>
                 <div class="col-md-8 child-input" style="padding-bottom: 1em;">
-                    <textarea id="child-biodata" class="form-control" rows="5" name="biodata"></textarea>
+                    <textarea id="child-biodata" class="form-control required" rows="5" name="biodata"></textarea>
                 </div>
             </div>
 
@@ -468,7 +488,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Relación</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent1-gender" class="form-control" onChange="parent1GenderOptions();" name="relación">
+                        <select id="parent1-gender" class="form-control required" onChange="parent1GenderOptions();" name="relación">
                             <option value="">No Seleccionado</option>
                             <option value="Padre">Padre</option>
                             <option value="Madre">Madre</option>
@@ -490,7 +510,7 @@
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-middle-name" class="form-control required" type="text" name="segundo">
+                        <input id="parent1-middle-name" class="form-control" type="text" name="segundo">
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
@@ -498,7 +518,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent1-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="parent1-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -533,7 +553,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="parent1-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="parent1-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -549,7 +569,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="parent1-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="parent1-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -586,27 +606,27 @@
                     </div>
                     <label class="col-md-4 control-label">Direccion de Casa</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-address" class="form-control required" type="text" name="direccion_de_casa">
+                        <input id="parent1-address" class="form-control" type="text" name="direccion_de_casa">
                     </div>
                     <label class="col-md-4 control-label">Ciudad</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-address-city" class="form-control required" type="text" name="ciudad">
+                        <input id="parent1-address-city" class="form-control" type="text" name="ciudad">
                     </div>
                     <label class="col-md-4 control-label">Provincia</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-address-province" class="form-control required" type="text" name="provincia">
+                        <input id="parent1-address-province" class="form-control" type="text" name="provincia">
                     </div>
                     <label class="col-md-4 control-label">Código Postal</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-address-zip-code" class="form-control required" type="text" name="código_postal">
+                        <input id="parent1-address-zip-code" class="form-control" type="text" name="código_postal">
                     </div>
                     <label class="col-md-4 control-label">Empleo</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-employment" class="form-control required" type="text" name="parent1-employment">
+                        <input id="parent1-employment" class="form-control" type="text" name="parent1-employment">
                     </div>
                     <label class="col-md-4 control-label">Ingresos</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent1-income" class="form-control required" type="text" name="parent1-income">
+                        <input id="parent1-income" class="form-control" type="text" name="parent1-income">
                     </div>
                     <div id="parent1-absent-form" class="is-absent-form">
                         <label class="col-md-4 control-label">Está ausente padre?</label>
@@ -628,7 +648,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Padre</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent2-gender" class="form-control" onChange="parent2GenderOptions();" name="género">
+                        <select id="parent2-gender" class="form-control required" onChange="parent2GenderOptions();" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Padre">Padre</option>
                             <option value="Madre">Madre</option>
@@ -646,7 +666,7 @@
                     </div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent2-first-name" class="form-control" type="text" name="nombre">
+                        <input id="parent2-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -654,11 +674,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="parent2-last-name" class="form-control" type="text" name="apellido">
+                        <input id="parent2-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="parent2-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="parent2-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -693,7 +713,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="parent2-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="parent2-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -709,7 +729,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="parent2-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="parent2-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -798,7 +818,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling1-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -806,11 +826,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling1-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling1-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-gender" class="form-control" name="género">
+                        <select id="sibling1-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -818,7 +838,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling1-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling1-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -853,7 +873,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling1-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling1-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -869,7 +889,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling1-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling1-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -925,7 +945,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling2-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling2-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -933,11 +953,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling2-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling2-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling2-gender" class="form-control" name="género">
+                        <select id="sibling2-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -945,7 +965,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling2-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling2-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -980,7 +1000,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling2-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling2-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -996,7 +1016,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling2-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling2-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -1052,7 +1072,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling3-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling3-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -1060,11 +1080,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling3-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling3-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling3-gender" class="form-control" name="género">
+                        <select id="sibling3-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -1072,7 +1092,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling3-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling3-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1107,7 +1127,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling3-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling3-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1123,7 +1143,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling3-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling3-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -1179,7 +1199,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling4-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling4-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -1187,11 +1207,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling4-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling4-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling4-gender" class="form-control" name="género">
+                        <select id="sibling4-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -1199,7 +1219,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling4-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling4-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1234,7 +1254,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling4-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling4-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1250,7 +1270,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling4-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling4-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -1306,7 +1326,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling5-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling5-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -1314,11 +1334,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling5-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling5-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling5-gender" class="form-control" name="género">
+                        <select id="sibling5-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -1326,7 +1346,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling5-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling5-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1361,7 +1381,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling5-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling5-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1377,7 +1397,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling5-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling5-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
@@ -1433,7 +1453,7 @@
                     <div class="col-md-12"><hr></div>
                     <label class="col-md-4 control-label">Nombre</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling6-first-name" class="form-control" type="text" name="nombre">
+                        <input id="sibling6-first-name" class="form-control required" type="text" name="nombre">
                     </div>
                     <label class="col-md-4 control-label">Segundo Nombre</label>
                     <div class="col-md-8 child-input">
@@ -1441,11 +1461,11 @@
                     </div>
                     <label class="col-md-4 control-label">Apellidos</label>
                     <div class="col-md-8 child-input">
-                        <input id="sibling6-last-name" class="form-control" type="text" name="apellido">
+                        <input id="sibling6-last-name" class="form-control required" type="text" name="apellido">
                     </div>
                     <label class="col-md-4 control-label">Género</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling6-gender" class="form-control" name="género">
+                        <select id="sibling6-gender" class="form-control required" name="género">
                             <option value="">No Seleccionado</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Masculino">Masculino</option>
@@ -1453,7 +1473,7 @@
                     </div>
                     <label class="col-md-4 control-label">Cumpleaños</label>
                     <div class="col-md-8 child-input">
-                        <select id="sibling6-birthday-day" class="form-control date" name="cumpleaños">
+                        <select id="sibling6-birthday-day" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1488,7 +1508,7 @@
                             <option value="31">31</option>
                         </select>
                         /
-                        <select id="sibling6-birthday-month" class="form-control date" name="cumpleaños">
+                        <select id="sibling6-birthday-month" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1504,7 +1524,7 @@
                             <option value="12">12</option>
                         </select>
                         /
-                        <select id="sibling6-birthday-year" class="form-control date" name="cumpleaños">
+                        <select id="sibling6-birthday-year" class="form-control date required" name="cumpleaños">
                             <option value=""></option>
                             <option value="1995">1995</option>
                             <option value="1996">1996</option>
