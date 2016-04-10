@@ -35,7 +35,7 @@ $(document).ready(function() {
         });
 
         //parent 1
-        data.parents = [];
+        data.padres = [];
         var parent1 = { };
         var parent1Inputs = $( ':input', '.parents-expanded-1' );
         parent1Inputs.each(function() {
@@ -44,8 +44,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(parent1)) {
-            data.parents.push(parent1);
-            data.parents[0]['cumpleaños'] = new Date($('#parent1-birthday-year').val(), $('#parent1-birthday-month').val() - 1, $('#parent1-birthday-day').val());
+            data.padres.push(parent1);
+            data.padres[0]['cumpleaños'] = new Date($('#parent1-birthday-year').val(), $('#parent1-birthday-month').val() - 1, $('#parent1-birthday-day').val());
         }
 
         var parent2 = { };
@@ -56,11 +56,11 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(parent2)) {
-            data.parents.push(parent2);
-            data.parents[1]['cumpleaños'] = new Date($('#parent2-birthday-year').val(), $('#parent2-birthday-month').val() - 1, $('#parent2-birthday-day').val());
+            data.padres.push(parent2);
+            data.padres[1]['cumpleaños'] = new Date($('#parent2-birthday-year').val(), $('#parent2-birthday-month').val() - 1, $('#parent2-birthday-day').val());
         }
 
-        data.siblings = [];
+        data.hermanos = [];
         var sibling1 = { };
         var sibling1Inputs = $( ':input', '.siblings-expanded-1' );
         sibling1Inputs.each(function() {
@@ -69,8 +69,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling1)) {
-            data.siblings.push(sibling1);
-            data.siblings[0]['cumpleaños'] = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
+            data.hermanos.push(sibling1);
+            data.hermanos[0]['cumpleaños'] = new Date($('#sibling1-birthday-year').val(), $('#sibling1-birthday-month').val() - 1, $('#sibling1-birthday-day').val());
         }
 
         var sibling2 = { };
@@ -81,8 +81,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling2)) {
-            data.siblings.push(sibling2);
-            data.siblings[1]['cumpleaños'] = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
+            data.hermanos.push(sibling2);
+            data.hermanos[1]['cumpleaños'] = new Date($('#sibling2-birthday-year').val(), $('#sibling2-birthday-month').val() - 1, $('#sibling2-birthday-day').val());
         }
 
         var sibling3 = { };
@@ -93,8 +93,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling3)) {
-            data.siblings.push(sibling3);
-            data.siblings[2]['cumpleaños'] = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
+            data.hermanos.push(sibling3);
+            data.hermanos[2]['cumpleaños'] = new Date($('#sibling3-birthday-year').val(), $('#sibling3-birthday-month').val() - 1, $('#sibling3-birthday-day').val());
         }
 
         var sibling4 = { };
@@ -105,8 +105,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling4)) {
-            data.siblings.push(sibling4);
-            data.siblings[3]['cumpleaños'] = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
+            data.hermanos.push(sibling4);
+            data.hermanos[3]['cumpleaños'] = new Date($('#sibling4-birthday-year').val(), $('#sibling4-birthday-month').val() - 1, $('#sibling4-birthday-day').val());
         }
 
         var sibling5 = { };
@@ -117,8 +117,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling5)) {
-            data.siblings.push(sibling5);
-            data.siblings[4]['cumpleaños'] = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
+            data.hermanos.push(sibling5);
+            data.hermanos[4]['cumpleaños'] = new Date($('#sibling5-birthday-year').val(), $('#sibling5-birthday-month').val() - 1, $('#sibling5-birthday-day').val());
         }
 
         var sibling6 = { };
@@ -129,8 +129,8 @@ $(document).ready(function() {
             }
         });
         if (!jQuery.isEmptyObject(sibling6)) {
-            data.siblings.push(sibling6);
-            data.siblings[5]['cumpleaños'] = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
+            data.hermanos.push(sibling6);
+            data.hermanos[5]['cumpleaños'] = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
         }
 
         // define the request
@@ -179,20 +179,20 @@ $(document).ready(function() {
     $('#education-button').click(function() {
         if ($('.education-expanded').css('display') == 'none') {
             $('.education-expanded').show();
-            $('#education-button').html('Hide Education');
+            $('#education-button').html('Eliminar la Educación');
         } else {
             $('.education-expanded').hide();
-            $('#education-button').html('Show Education');
+            $('#education-button').html('Salud Educación');
         }
     });
 
     $('#health-button').click(function() {
         if ($('.health-expanded').css('display') == 'none') {
             $('.health-expanded').show();
-            $('#health-button').html('Hide Health');
+            $('#health-button').html('Eliminar la salud');
         } else {
             $('.health-expanded').hide();
-            $('#health-button').html('Show Health');
+            $('#health-button').html('Salud Pantalla');
         }
     });
 
