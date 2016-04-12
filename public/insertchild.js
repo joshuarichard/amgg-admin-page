@@ -148,7 +148,9 @@ $(document).ready(function() {
                 data.hermanos[5]['cumpleaños'] = new Date($('#sibling6-birthday-year').val(), $('#sibling6-birthday-month').val() - 1, $('#sibling6-birthday-day').val());
             }
         }
-        //check required fields are filled in
+
+        //check required fields are filled in, if they are not
+        //set border color to red
         var checkFields = function() {
             var passed = true;
             $('.required').each(function() {
@@ -162,6 +164,7 @@ $(document).ready(function() {
         }
 
         //if all required fields are filled in, submit request
+        //else alert user to fill in required fields
         if(checkFields()) {
             // define the request
             $.ajax({
@@ -177,7 +180,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            alert('Please complete the highlighted fields');
+            alert('Por favor completar los formularios resaltados');
         }
     });
 
