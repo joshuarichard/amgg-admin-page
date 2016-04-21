@@ -155,7 +155,6 @@ $(document).ready(function() {
             var passed = true;
             $('.required').each(function() {
                 if($(this).val() == '' && $(this).parent().parent().css('display') != 'none') {
-                    console.log($(this) + $(this).parent().parent());
                     $(this).css('border-color', 'red');
                     passed = false;
                 }
@@ -166,21 +165,38 @@ $(document).ready(function() {
         //if all required fields are filled in, submit request
         //else alert user to fill in required fields
         if(checkFields()) {
-            // define the request
-            $.ajax({
-                url: '/api/v1/child/insert',
-                type: 'POST',
-                data: data,
-                success: function(res) {
-                    alert('niño inserta');
-                    location.reload();
-                },
-                error: function(httpObj) {
-                    alert('que había un problema de insertar el niño');
+            var white = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAEYklEQVR4Xu3UAQkAAAwCwdm/9HI83BLIOdw5AgQIRAQWySkmAQIEzmB5AgIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlAABg+UHCBDICBisTFWCEiBgsPwAAQIZAYOVqUpQAgQMlh8gQCAjYLAyVQlKgIDB8gMECGQEDFamKkEJEDBYfoAAgYyAwcpUJSgBAgbLDxAgkBEwWJmqBCVAwGD5AQIEMgIGK1OVoAQIGCw/QIBARsBgZaoSlACBB1YxAJfjJb2jAAAAAElFTkSuQmCC';
+            if (canvas.toDataURL() !== white) {
+                var jpegs = ['jpg', 'jpeg', 'JPEG', 'JPG'];
+                var pngs = ['png', 'PNG'];
+
+                // only continue if either jpeg or png.
+                if (jpegs.indexOf(imageE.target.value.split('.').pop()) !== -1 || pngs.indexOf(imageE.target.value.split('.').pop()) !== -1) {
+                    if (jpegs.indexOf(imageE.target.value.split('.').pop()) !== -1) {
+                        data['foto'] = canvas.toDataURL('image/jpeg');
+                    } else {
+                        data['foto'] = canvas.toDataURL();
+                    }
+
+                    // define the request
+                    $.ajax({
+                        url: '/api/v1/child/insert',
+                        type: 'POST',
+                        data: data,
+                        success: function(res) {
+                            alert('Niño inserta.');
+                            location.reload();
+                        },
+                        error: function(httpObj) {
+                            alert('Que había un problema de insertar el niño.');
+                        }
+                    });
+                } else {
+                    alert('Formato de imagen no es compatible.');
                 }
-            });
+            }
         } else {
-            alert('Por favor completar los formularios resaltados');
+            alert('Por favor completar los formularios resaltados.');
         }
     });
 
@@ -188,6 +204,7 @@ $(document).ready(function() {
         location.reload();
     });
 
+    var imageE;
     var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
     var canvas = document.getElementById('imageCanvas');
@@ -199,17 +216,15 @@ $(document).ready(function() {
         reader.onload = function(event){
             var img = new Image();
             img.onload = function(){
-                if (img.height > imageContainerHeight) {
-                    img.width *= imageContainerHeight / img.height;
-                    img.height = imageContainerHeight;
-                }
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0, img.width, img.height);
+                console.log(e);
             }
             img.src = event.target.result;
         }
         reader.readAsDataURL(e.target.files[0]);
+        imageE = e;
     }
 
     $('#education-button').click(function() {
