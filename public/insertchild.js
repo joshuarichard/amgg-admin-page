@@ -15,7 +15,7 @@ $(document).ready(function() {
             data['cumpleaños'] = new Date($('#child-birthday-year').val(), $('#child-birthday-month').val() - 1, $('#child-birthday-day').val());
         }
         if (document.getElementById("imageLoader").files.length != 0) {
-            var picture = document.getElementById('imageCanvas').toDataURL();
+            data['imagen'] = document.getElementById('imageCanvas').toDataURL();
         }
 
         // getting the values from the education form
