@@ -10,6 +10,6 @@
         "cartCollection": "carts"
     },
     "app": {
-        "port": 3000
+        "port": 3001
     }
 }
