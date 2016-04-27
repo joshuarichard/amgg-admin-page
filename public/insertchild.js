@@ -194,6 +194,8 @@ $(document).ready(function() {
                 } else {
                     alert('Formato de imagen no es compatible.');
                 }
+            } else {
+                alert('Por favor, sube una foto.')
             }
         } else {
             alert('Por favor completar los formularios resaltados.');
